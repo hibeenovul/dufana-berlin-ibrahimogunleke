@@ -10,7 +10,7 @@ public class LekkiProperty {
     private int numberOfBedrooms;
     private int numberOfSittingRooms;
     private int numberOfKitchens;
-    private int numberOfBathRooms;
+    private int numberOfBathrooms;
     private int numberOfToilets;
     private String propertyOwner;
     private String description;
@@ -63,10 +63,10 @@ public class LekkiProperty {
         }
 
         public int getNumberOfBathRooms() {
-            return numberOfBathRooms;
+            return numberOfBathrooms;
         }
         public void setNumberOfBathRooms(int numberOfBathRooms) {
-            this.numberOfBathRooms = numberOfBathRooms;
+            this.numberOfBathrooms = numberOfBathRooms;
         }
 
         public int getNumberOfToilets() {
@@ -106,7 +106,7 @@ public class LekkiProperty {
 
         @Override
         public String toString() {
-            return propertyAddress + "," + propertyAddress + "," + propertyType;
+            return propertyId + "," + propertyAddress + "," + propertyType;
         }
 
         @Override
