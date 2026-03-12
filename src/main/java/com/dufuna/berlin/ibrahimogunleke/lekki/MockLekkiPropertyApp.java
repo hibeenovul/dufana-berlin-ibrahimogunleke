@@ -8,8 +8,11 @@ import java.util.List;
 public class MockLekkiPropertyApp {
     public static void main(String[] args) {
         LekkiPropertyService service = new MockLekkiPropertyService();
-        LekkiProperty property = new LekkiProperty();
+
         for (int i = 1; i <= 3; i++) {
+
+        LekkiProperty property = new LekkiProperty();
+
 
             property.setPropertyId((long) i);
             service.saveProperty(property);
@@ -21,5 +24,9 @@ public class MockLekkiPropertyApp {
         List<LekkiProperty> allProperties = service.getProperties();
         System.out.println("Sucess! Found Properties in database" +allProperties.size());
 
+        System.out.println("--- PRINTING DETAILED RECEIPT ---");
+        for (LekkiProperty p : allProperties) {
+            System.out.println("Property ID in Database: " + p.getPropertyId());
+        }
     }
 }
