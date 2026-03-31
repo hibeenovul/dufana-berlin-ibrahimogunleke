@@ -1,32 +1,48 @@
 package com.dufuna.berlin.ibrahimogunleke.tax.model;
 
-/**
- * This Entity represent a single tax bracket.
- * It holds the rules for a specific income rage
- */
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "tax_brackets")
 public class TaxBracket {
-    // The lowest amount of money for this bracket
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private double minimumIncome;
-
-    // The highest amount of money for this bracket
     private double maximumIncome;
-
-    //The percentage of Tax (e.g, 0.10 for 10%)
     private double rate;
 
+    // The mandatory empty constructor for the Database
+    public TaxBracket() {
+    }
 
-    // All-args constructor to quickly create a bracket
+    // The constructor for your test files
     public TaxBracket(double minimumIncome, double maximumIncome, double rate) {
         this.minimumIncome = minimumIncome;
         this.maximumIncome = maximumIncome;
         this.rate = rate;
     }
 
-    // --- GETTERS AND SETTERS (Encapsulation) ---
+    // --- GETTERS AND SETTERS ---
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public double getMinimumIncome() {
         return minimumIncome;
     }
+
     public void setMinimumIncome(double minimumIncome) {
         this.minimumIncome = minimumIncome;
     }
@@ -34,6 +50,7 @@ public class TaxBracket {
     public double getMaximumIncome() {
         return maximumIncome;
     }
+
     public void setMaximumIncome(double maximumIncome) {
         this.maximumIncome = maximumIncome;
     }
@@ -41,6 +58,7 @@ public class TaxBracket {
     public double getRate() {
         return rate;
     }
+
     public void setRate(double rate) {
         this.rate = rate;
     }
